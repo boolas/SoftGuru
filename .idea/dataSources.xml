@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2595740460">
+    <data-source source="LOCAL" name="Rails SoftGuru: development" uuid="80a70629-274d-4ab2-b4a4-f8d30e9a8fa8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\boolas\PRz\Magisterka\SoftGuru\db\development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails SoftGuru: test" uuid="232fa020-bfec-40ba-bfe5-6e8ed5cb8a90">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\boolas\PRz\Magisterka\SoftGuru\db\test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails SoftGuru: cucumber" uuid="0a3ffdd3-0e08-415c-9e97-3e4edf49be9f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\boolas\PRz\Magisterka\SoftGuru\db\test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

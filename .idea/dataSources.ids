@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails SoftGuru: development" uuid="80a70629-274d-4ab2-b4a4-f8d30e9a8fa8">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails SoftGuru: test" uuid="232fa020-bfec-40ba-bfe5-6e8ed5cb8a90">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails SoftGuru: cucumber" uuid="0a3ffdd3-0e08-415c-9e97-3e4edf49be9f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
