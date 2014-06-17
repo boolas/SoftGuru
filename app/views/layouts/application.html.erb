@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SoftGuru</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -8,7 +11,23 @@
 </head>
 <body>
 
-<%= yield %>
+<%= nav_bar brand: "SoftGuru" do %>
+    <%= menu_group do %>
+        <%= menu_item "Projects", root_path %>
+        <%= menu_item "Users", '#' %>
+    <% end %>
+    <%= menu_group :pull => :right do %>
+        <%= menu_item 'Log Out', '#' %>
+    <% end %>
+<% end %>
+
+<div class="container">
+  <%= bootstrap_flash %>
+</div>
+
+<div class="container">
+    <%= yield %>
+</div>
 
 </body>
 </html>

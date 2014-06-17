@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -50,8 +50,11 @@ group :development, :test do
 end
 
 group :test do
+  gem 'faker', '~> 1.3.0'
   gem 'shoulda-matchers', '~> 2.6.1'
   gem 'cucumber-rails', '~> 1.4.1', require: false
   gem 'database_cleaner', '~> 1.3.0'
   gem 'selenium-webdriver', '~> 2.42.0'
 end
+
+gem "twitter-bootstrap-rails", "~> 2.2.8"
