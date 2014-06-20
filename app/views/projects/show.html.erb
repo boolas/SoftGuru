@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @project.name %>
 </p>
@@ -18,6 +13,11 @@
 <p>
   <strong>Language:</strong>
   <%= @project.language %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user.full_name %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

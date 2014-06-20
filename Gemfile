@@ -55,6 +55,7 @@ group :test do
   gem 'cucumber-rails', '~> 1.4.1', require: false
   gem 'database_cleaner', '~> 1.3.0'
   gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'launchy'
 end
 
 gem "twitter-bootstrap-rails", "~> 2.2.8"

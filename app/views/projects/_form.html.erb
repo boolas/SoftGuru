@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -26,6 +22,11 @@
   <div class="field">
     <%= f.label :language %><br>
     <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.select :user_id, options_from_collection_for_select(User.all, 'id', 'full_name') %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
