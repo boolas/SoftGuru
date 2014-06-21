@@ -29,17 +29,18 @@ end
 
 When(/^I click on "(.*?)"$/) do |link|
   click_on(link)
+
 end
 
 Then(/^I should be on the new project page$/) do
-  visit(new_project_path)
+  expect(current_path).to eq new_project_path
 end
 
 Then(/^I should be on the projects page$/) do
-  visit(projects_path)
+  expect(current_path).to eq projects_path
 end
 
-Given(/^I am on the new post page$/) do
+Given(/^I am on the new project page$/) do
   visit(new_project_path)
 end
 
@@ -76,4 +77,26 @@ And(/^there should not be Project with name "(.*?)"$/) do |project_name|
   project = Project.find_by_name(project_name)
   expect(project).to be_nil
   expect(page).to_not have_content(project_name)
+end
+
+And(/^I have authenticated my access$/) do
+  steps %{
+    When I visit login page
+    And I fill in "Email" and "Password" with user data
+    And I press "Log In"
+    Then I should see notice "Logged in!"
+  }
+end
+
+And(/^I visit login page$/) do
+  visit(login_path)
+end
+
+And(/^I fill in "(.*?)" and "(.*?)" with user data$/) do |field1, field2|
+  fill_in field1, with: @user.email
+  fill_in field2, with: @user.password
+end
+
+And(/^I should see notice "(.*?)"$/) do |notice|
+  expect(page).to have_content(notice)
 end

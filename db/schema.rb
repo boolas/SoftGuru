@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620124634) do
+ActiveRecord::Schema.define(version: 20140621141859) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140620124634) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
 end

@@ -1,4 +1,4 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
 <table class="table table-striped">
   <thead>
@@ -7,9 +7,9 @@
       <th>Description</th>
       <th>Language</th>
       <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <% if administrator? %>
+          <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -20,13 +20,20 @@
         <td><%= project.description %></td>
         <td><%= project.language %></td>
         <td><%= project.user.full_name %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td>
+        <% if current_user %>
+          <%= link_to 'Edit', edit_project_path(project) %>
+        <% end %>
+        <% if administrator? %>
+            <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<% if current_user %>
+    <%= link_to 'New Project', new_project_path %>
+<% end %>
