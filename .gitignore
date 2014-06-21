@@ -16,4 +16,5 @@
 /tmp
 
 # Ignore IntelliJ settings folder.
-/.idea
+/.idea/workspace.xml
+/.idea/tasks.xml
