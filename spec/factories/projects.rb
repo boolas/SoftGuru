@@ -3,7 +3,7 @@ require 'faker'
 FactoryGirl.define do
   factory :project do
     association :user
-    name 'First Project'
+    name { Faker::Name.title }
     description { Faker::Lorem.paragraph }
     language 'C#'
 

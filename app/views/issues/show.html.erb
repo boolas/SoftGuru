@@ -1,0 +1,37 @@
+<p>
+  <strong>Name:</strong>
+  <%= @issue.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @issue.description %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @issue.issue_type %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @issue.status %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @issue.project.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @issue.user.full_name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @issue.owner.full_name %>
+</p>
+
+<%= link_to 'Edit', edit_project_issue_path(@issue.project, @issue) %> |
+<%= link_to 'Back', project_issues_path(@issue.project) %>

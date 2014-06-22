@@ -15,6 +15,7 @@
     <%= menu_group do %>
         <%= menu_item "Projects", root_path %>
         <% if administrator? %>
+            <%= menu_item "Issues", issues_path %>
             <%= menu_item "Users", users_path %>
         <% end %>
     <% end %>

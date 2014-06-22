@@ -41,13 +41,13 @@ Feature: Manage projects
     Then I should see "Project was successfully created."
     And I should see project page with project "Test project"
 
-#  @javascript
-#  Scenario: Delete project
-#    Given there is a User with admin permissions
-#    And I have authenticated my access
-#    Given there is a Project with name "Test project"
-#    And I visit projects page
-#    When I click on "Destroy" in "Test project" row
-#    And I confirm alert message
-#    Then I should be on the projects page
-#    And there should not be Project with name "Test project"
+  @javascript
+  Scenario: Delete project
+    Given there is a User with admin permissions
+    And I have authenticated my access
+    Given there is a Project with name "Test project"
+    And I visit projects page
+    When I click on "Destroy" in "Test project" row
+    And I confirm alert message
+    Then I should be on the projects page
+    And there should not be Project with name "Test project"

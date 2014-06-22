@@ -38,11 +38,11 @@ Feature: Manage users
     Then I should see "User was successfully created."
     And I should see user page with user "James Dean"
 
-#  @javascript
-#  Scenario: Delete user
-#    Given there is a User with first name "John" and last name "Doe"
-#    And I visit users page
-#    When I click on "Destroy" in "John Doe" row
-#    And I confirm alert message
-#    Then I should be on the users page
-#    And there should not be User with name "John Doe"
+  @javascript
+  Scenario: Delete user
+    Given there is a User with first name "John" and last name "Doe"
+    And I visit users page
+    When I click on "Destroy" in "John Doe" row
+    And I confirm alert message
+    Then I should be on the users page
+    And there should not be User with name "John Doe"

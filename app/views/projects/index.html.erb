@@ -22,6 +22,7 @@
         <td><%= project.user.full_name %></td>
         <td>
         <% if current_user %>
+          <%= link_to 'Issues', project_issues_path(project) %>
           <%= link_to 'Edit', edit_project_path(project) %>
         <% end %>
         <% if administrator? %>

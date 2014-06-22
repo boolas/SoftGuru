@@ -1,0 +1,40 @@
+<h1>Listing issues</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Project</th>
+      <th>User</th>
+      <th>Owner</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @issues.each do |issue| %>
+      <tr>
+        <td><%= link_to issue.name, project_issue_path(issue.project, issue) %></td>
+        <td><%= issue.description %></td>
+        <td><%= issue.issue_type %></td>
+        <td><%= issue.status %></td>
+        <td><%= link_to issue.project.name, project_path(issue.project) %></td>
+        <td><%= issue.user.full_name %></td>
+        <td><%= issue.owner.full_name %></td>
+        <td>
+          <%= link_to 'Edit', edit_project_issue_path(issue.project, issue) %>
+          <% if administrator? %>
+              <%= link_to 'Destroy', project_issue_path(issue.project, issue), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Issue', new_project_issue_path(@project_id) %>
