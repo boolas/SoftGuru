@@ -2,12 +2,7 @@ require 'spec_helper'
 
 describe ProjectsController do
 
-  describe "user access" do
-    before :each do
-      user = create(:user)
-      session[:user_id] = user.id
-    end
-
+  shared_examples("public access to projects") do
     describe "GET #index" do
       it "assigns all projects as @projects" do
         project = create(:project)
@@ -28,6 +23,15 @@ describe ProjectsController do
         expect(response).to render_template :show
       end
     end
+  end
+
+  describe "user access" do
+    before :each do
+      user = create(:user)
+      session[:user_id] = user.id
+    end
+
+    it_behaves_like "public access to projects"
 
     describe "GET #new" do
       it "assigns a new Project to @project" do
@@ -149,26 +153,8 @@ describe ProjectsController do
   end
 
   describe "guest access" do
-    describe "GET #index" do
-      it "assigns all projects as @projects" do
-        project = create(:project)
-        get :index
-        expect(assigns(:projects)).to eq([project])
-      end
-    end
 
-    describe "GET #show" do
-      it "assigns the requested project to @project" do
-        project = create(:project)
-        get :show, id: project
-        expect(assigns(:project)).to eq project
-      end
-      it "renders the :show template" do
-        project = create(:project)
-        get :show, id: project
-        expect(response).to render_template :show
-      end
-    end
+    it_behaves_like "public access to projects"
 
     describe "GET #new" do
       it "requires login" do
