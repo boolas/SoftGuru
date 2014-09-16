@@ -29,11 +29,19 @@
 <% end %>
 
 <div class="container">
-  <%= bootstrap_flash %>
+  <div class="col-md-12">
+    <%= bootstrap_flash %>
+  </div>
 </div>
 
 <div class="container">
-    <%= yield %>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
